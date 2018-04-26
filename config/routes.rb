@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'dashboard/index'
   end
 
+
   devise_for :admins
   devise_for :members
   #devise_for :installs
