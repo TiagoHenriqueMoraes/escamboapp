@@ -6,8 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 
-#gem para entidade de relacionamento
-gem 'rails-erd'
+
+gem 'jquery-rails'
+#gem para template de administração de admin.
+gem 'bootstrap_sb_admin_base_v2'
 #i18n para metodo devise
 gem 'devise-i18n'
 #gem para facilitar a criação de um metodo de autenticação.
@@ -45,6 +47,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "better_errors"
   gem "binding_of_caller"
+  #gem para entidade de relacionamento
+  gem 'rails-erd'
 end
 
 group :development do
