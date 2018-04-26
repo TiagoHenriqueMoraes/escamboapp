@@ -6,12 +6,16 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 
+
+gem 'bundler', '>= 1.8.4'
 gem 'jquery-rails'
 #gem para template de administração de admin.
 gem 'bootstrap_sb_admin_base_v2'
 #i18n para metodo devise
 gem 'devise-i18n'
+gem 'pg'
 #gem para facilitar a criação de um metodo de autenticação.
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
