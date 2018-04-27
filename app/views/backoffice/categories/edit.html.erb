@@ -10,6 +10,22 @@
                     Editign Categories
                 </div>
                 <div class="panel-body">
+                    <div class="col-lg-6">
+                        <%# esse backoffice é para indicar a rota da variavel %>
+                        <%= form_for [:backoffice, @category] do |f|%>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <%= f.text_field :description, class:"form-control", placeholder: "Motorcicle..."%>
+                        </div>
+
+                        <%= f.submit "Save", :class => "btn btn-default" %>
+
+
+                        <%end%>
+
+
+
+                    </div>
                 </div>
             </div>
         </div>
