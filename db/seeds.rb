@@ -16,7 +16,7 @@ categories = ["Animais e acessórios",
               "Moda e beleza",
               "Veículo e barcos",
               "Imóveis",
-              "Empregos e negõcios"]
+              "Empregos e negócios"]
 
 categories.each do |category|
     Category.find_or_create_by(description: category)

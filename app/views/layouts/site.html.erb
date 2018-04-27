@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Escamboapp</title>
+    <title>EscamboApp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +19,10 @@
   
   </head>
  <body>
+    <%= render "layouts/site_shared/navigation"%>
     <%= yield %>
+    <%= render "layouts/site_shared/footer"%>
+    
   </body>
 </html>
 
