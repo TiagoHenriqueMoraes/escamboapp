@@ -106,6 +106,7 @@ GEM
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    notifyjs_rails (0.0.2)
     orm_adapter (0.5.0)
     pg (1.0.0)
     puma (3.11.4)
@@ -189,7 +190,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.6.1)
+    web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  notifyjs_rails
   pg
   puma (~> 3.7)
   rails (~> 5.1.6)
@@ -222,6 +224,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
