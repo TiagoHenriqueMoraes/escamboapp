@@ -22,3 +22,9 @@ categories.each do |category|
     Category.find_or_create_by(description: category)
 end
 puts "Categorias cadastradas"
+
+
+puts "Registering Admin Dafault"
+  Admin.create!(email: "admin@admin.com", password: "123456", password_confirmation: "123456")
+puts "Admin Successfully Registered"
+

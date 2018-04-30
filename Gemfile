@@ -7,10 +7,10 @@ end
 
 gem 'notifyjs_rails'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-
 gem 'sprockets'
 gem 'bundler', '>= 1.8.4'
 gem 'jquery-rails'
+gem 'faker'
 #gem para template de administração de admin.
 gem 'bootstrap_sb_admin_base_v2'
 #i18n para metodo devise
