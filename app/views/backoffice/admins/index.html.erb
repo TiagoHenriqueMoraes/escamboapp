@@ -27,7 +27,7 @@
                         <%end%>
                         <% if current_admin.id != admin.id%>
                             <%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle",
-                            data: {confirm: "Want delete '#{admin.email}'?"} do%>
+                            data: {confirm: "Want delete '<b>#{admin.email}</b>'?"} do%>
                             <i class="fa fa-times"></i>
                             <%end%>
                         <%end%>
