@@ -25,6 +25,10 @@ puts "Categorias cadastradas"
 
 
 puts "Registering Admin Dafault"
-  Admin.create!(email: "admin@admin.com", password: "123456", password_confirmation: "123456")
+  Admin.create!(name: "Deregue Jhonson",
+                email: "admin@admin.com", 
+                password: "123456", 
+                password_confirmation: "123456",
+                role: 0)
 puts "Admin Successfully Registered"
 

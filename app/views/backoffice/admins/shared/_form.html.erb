@@ -20,6 +20,10 @@
         <%# esse backoffice é para indicar a rota da variavel por estarmos em uma subpastas%>
         <%= form_for [:backoffice, @admin] do |f|%>
         <div class="form-group">
+            <label>Name</label>
+            <%= f.text_field :name, class:"form-control", placeholder: "Admin Name"%>
+        </div>
+        <div class="form-group">
             <label>Email</label>
             <%= f.text_field :email, class:"form-control", placeholder: "Adm Email"%>
         </div>
