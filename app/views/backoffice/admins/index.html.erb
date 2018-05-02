@@ -18,7 +18,6 @@
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Email</th>
                     <th>Role</th>
                     <th></th>
                 </tr>
@@ -28,13 +27,15 @@
                 <tr>
                     <td><%=admin.id%></td>
                     <td><%=admin.name%></td>
-                    <td><%=admin.email%></td>
                     <td><%=admin.role_i18n%></td>
                     <td style="width: 150px">
+                        <%= link_to "#", class: "btn btn-info btn-circle", remote: true do %>
+                        <i class="fa fa-envelope"></i>
+                        <%end%>
                         <%= link_to edit_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do %>
                         <i class="fa fa-wrench"></i>
                         <%end%>
-                        <% if current_admin.id != admin.id%>
+                        <% if current_admin.id != admin.id && policy(@admin).destroy?%>
                             <%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle",
                             data: {confirm: "Want delete '<b>#{admin.email}</b>'?"} do%>
                             <i class="fa fa-times"></i>
@@ -48,3 +49,6 @@
     </div>
 </div>
 </div>
+
+
+<%= render 'backoffice/admins/shared/send_mail' %>
