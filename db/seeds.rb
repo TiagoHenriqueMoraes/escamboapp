@@ -29,6 +29,6 @@ puts "Registering Admin Dafault"
                 email: "admin@admin.com", 
                 password: "123456", 
                 password_confirmation: "123456",
-                role: 0)
+                role: "full_access")
 puts "Admin Successfully Registered"
 
