@@ -1,0 +1,9 @@
+
+$(function(){
+    $('#SendMailModal').modal('hide');
+    $.notify('Email successful sended', 'success')
+    $('#SendMailModal').on('shown.bs.modal', function(){
+        $('#subject-text').focus();
+    })
+
+});

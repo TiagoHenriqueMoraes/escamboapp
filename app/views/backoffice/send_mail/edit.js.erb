@@ -1,0 +1,13 @@
+
+$(function(){
+    $('#recipient-name').val('<%= @admin.email%>');
+
+    $('h4.modal-title').text('Send Message to <%= @admin.name%>');
+
+    $('#SendMailModal').modal();
+
+    $('#SendMailModal').on('shown.bs.modal', function(){
+        $('#subject-text').focus();
+    })
+
+});
