@@ -2,8 +2,8 @@ require 'faker'
 
 namespace :utils do
   desc "Create Fake admins"
-  puts "Generating admins"
   task generate_admins: :environment do
+    puts "Generating admins"
     10.times do 
       Admin.create!(
         name: Faker::Name.name,
@@ -12,6 +12,24 @@ namespace :utils do
         password_confirmation: "123456",
         role: [0,0,1,1,1,1,1].sample)
     end
+    puts "Admins generated"
   end
-  puts "Admins generated"
+
+
+
+  desc "Create fake ads"
+  task generate_ads: :environment do
+    puts "Creating Adversimnets..."
+    100.times do
+      Ad.Create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        member: Member.all.sample,
+        category: Category.all.sample
+      )
+      end
+      p "Ads successeful created!"
+    end
+
+
 end

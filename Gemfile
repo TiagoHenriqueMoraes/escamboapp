@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'bootbox-rails'
 gem "pundit"
+gem 'lerolero_generator'
 
 gem 'enum_help'
 #gem para template de administração de admin.
