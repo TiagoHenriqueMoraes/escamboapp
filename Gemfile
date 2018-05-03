@@ -14,8 +14,10 @@ gem 'faker'
 gem 'bootbox-rails'
 gem "pundit"
 gem 'lerolero_generator'
-
+gem 'money-rails'
 gem 'enum_help'
+gem 'paperclip'
+
 #gem para template de administração de admin.
 gem 'bootstrap_sb_admin_base_v2'
 #i18n para metodo devise

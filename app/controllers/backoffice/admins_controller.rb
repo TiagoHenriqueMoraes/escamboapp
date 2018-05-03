@@ -59,7 +59,11 @@ private
       params[:admin].delete(:password_confirmation)      
     end  
 
-    params.require(:admin).permit(policy(@admin).permitted_attributes)
+    if @admin.blank?
+      params.require(:admin).permit(:email, :password, :role, :password_confirmation, :name)
+    else
+      params.require(:admin).permit(policy(@admin).permitted_attributes)
+    end
   end
   
   def set_admin
