@@ -1,5 +1,8 @@
 # README
 
+
+#### Look at "lib/task" - *utils:setup_dev* can migrate all the stuff to the db.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

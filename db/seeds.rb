@@ -32,3 +32,9 @@ puts "Registering Admin Dafault"
                 role: "full_access")
 puts "Admin Successfully Registered"
 
+puts "Registering member Dafault"
+  Member.create!(email: "member@member.com", 
+                password: "123456", 
+                password_confirmation: "123456")
+puts "Member Successfully Registered"
+
