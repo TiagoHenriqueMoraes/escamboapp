@@ -1,6 +1,24 @@
 require 'faker'
 
 namespace :utils do
+
+  desc "Setting the development workspace"
+  task setup_dev: :environment do
+    puts "Setting up..."
+
+    puts "Dropping database #{%x(rake db:drop)}"
+    puts "Creating database #{%x(rake db:create)}"
+    puts %x(rake db:migrate)
+    puts %x(rake db:seed)
+    puts %x(rake utils:generate_admins)
+    puts %x(rake utils:generate_members)
+    puts %x(rake utils:generate_ads)
+    
+    puts "Setup completed"
+  end
+
+
+
   desc "Create Fake admins"
   task generate_admins: :environment do
     puts "Generating admins"
@@ -17,20 +35,34 @@ namespace :utils do
 
 
 
+  desc "Create fake members"
+  task generate_members: :environment do
+    puts "Creating member"
+    30.times do
+      Member.create!(
+        email:Faker::Internet.email,
+        password: "123456",
+        password_confirmation: "123456"
+      )
+    end
+    puts "Members Created"
+  end
+
+
   desc "Create fake ads"
   task generate_ads: :environment do
     puts "Creating Adversimnets..."
-    100.times do
+    20.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: LeroleroGenerator.paragraph(Random.rand(3)),
-        #member: Member.all.sample,
+        member: Member.all.sample,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
         picture: File.new(Rails.root.join('public', 'img', "#{Random.rand(9)}.jpg"),'r')
       )
       end
-      p "Ads successeful created!"
+      puts "Ads successeful created!"
     end
 
 
