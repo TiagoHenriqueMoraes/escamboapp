@@ -1,4 +1,29 @@
-<table class="table table-hover">
-
-
+<h1> Listing Announces </h1>
+<table class="table table-striped"> 
+    <thead>
+        <tr> 
+            <th>#</th> 
+            <th>Image</th> 
+            <th>Title</th> 
+            <th>Category</th> 
+            <th>Price</th> 
+            <th></th>
+        </tr>
+    </thead> 
+    <tbody> 
+    <% @ads.each do |ad|%>
+        <tr> 
+            <th scope="row"> <%= ad.id%></th> 
+            <td> <%= image_tag ad.picture(:thumb)%> </td> 
+            <td> <%= ad.title%> </td> 
+            <td> <%= ad.category.description%> </td> 
+            <td> <%= humanized_money_with_symbol ad.price%> </td>
+            <th>
+                <%= link_to edit_site_profile_ad_path(ad), class: "btn btn-primary btn-sm" do%>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <%end%>
+            </th>
+        </tr> 
+    <%end%>
+    </tbody> 
 </table>

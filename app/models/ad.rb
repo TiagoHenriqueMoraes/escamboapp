@@ -4,7 +4,8 @@ class Ad < ApplicationRecord
 
   
   #scope
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  scope :to_the, ->(member) { where(member: member) }
   
   #paperclip
   has_attached_file :picture, styles: { medium: "254x150#", thumb: "100x100" }, default_url: "/images/:style/missing.png"

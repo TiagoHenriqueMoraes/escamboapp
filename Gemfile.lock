@@ -49,6 +49,7 @@ GEM
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     bootbox-rails (0.5.0)
+    bootstrap_form (2.7.0)
     bootstrap_sb_admin_base_v2 (0.3.6)
       font-awesome-rails
       jquery-rails
@@ -131,7 +132,7 @@ GEM
     minitest (5.11.3)
     monetize (1.7.0)
       money (~> 6.9)
-    money (6.11.1)
+    money (6.11.2)
       i18n (>= 0.6.4, < 1.1)
     money-rails (1.11.0)
       activesupport (>= 3.0)
@@ -140,7 +141,7 @@ GEM
       railties (>= 3.0)
     multi_json (1.13.1)
     mustermann (1.0.2)
-    nio4r (2.3.0)
+    nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     notifyjs_rails (0.0.2)
@@ -267,6 +268,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootbox-rails
+  bootstrap_form (~> 2.7)
   bootstrap_sb_admin_base_v2
   bundler (>= 1.8.4)
   byebug

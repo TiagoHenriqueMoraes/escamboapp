@@ -55,7 +55,7 @@ namespace :dev do
   task generate_ads: :environment do
     puts "Creating Adversimnets..."
 
-    5.times do
+    3.times do
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: LeroleroGenerator.paragraph(Random.rand(3)),
