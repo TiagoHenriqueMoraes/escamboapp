@@ -9,7 +9,7 @@
     <div class="row">
         <div class="form-group col-md-6">
             <%= f.label :category%>
-            <%= f.collection_select :category_id, Category.all, :id, :description%>
+            <%= f.collection_select :category_id, Category.all, :id, :description, {}, {class: "form-control"}%>
         </div>
     </div>
     <div class="row">
@@ -20,9 +20,9 @@
     </div>
     <div class="row">
         <div class="form-group col-md-6">
-            <%= f.label :picture%>
-            <%= image_tag @ad.picture(:medium), class: "img-thumbnail"%>
-            <%= f.file_field :picture%>
+            <%= f.label :picture%> <br>
+            <%= image_tag @ad.picture(:medium), class: "img-thumbnail"%><br>
+            <%= f.file_field :picture, class: "btn"%>
         </div>
     </div>
     <div class="row">
