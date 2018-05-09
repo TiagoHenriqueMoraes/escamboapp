@@ -1,0 +1,36 @@
+<%= form_for([:site, :profile, @ad]) do |f|%>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <%= f.label :title%>
+            <%= f.text_field :title, class: "form-control", placeholder:"Title" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <%= f.label :category%>
+            <%= f.collection_select :category_id, Category.all, :id, :description, {}, {class: "form-control"}%>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <%= f.label :price%>
+           <span>(R$)</span> <%= f.text_field :price, class: "form-control", placeholder:"Title" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <%= f.label :picture%> <br>
+            <% if @ad.picture.present? %>
+                <%= image_tag @ad.picture(:medium), class: "img-thumbnail"%><br>
+            <%end%>
+            <%= f.file_field :picture, class: "btn"%>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <%= f.label :description%>
+            <%= f.text_area :title, class: "form-control", rows: 5%>
+        </div>
+    </div>
+    <%= submit_tag "Submit", class:"btn btn-primary"%>
+<%end%>

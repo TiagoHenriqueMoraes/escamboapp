@@ -10,11 +10,25 @@ class Site::Profile::AdsController < Site::ProfileController
 
     def update
         if @ad.update(params_ad)
-            redirect_to site_profile_ads_path, notice: "Announce successeful updated"
+            redirect_to site_profile_ads_path, notice: "Announce successful updated"
         else
             render :edit
         end
 
+    end
+
+    def new
+        @ad = Ad.new
+    end
+    
+    def create
+        @ad = Ad.new(params_ad)
+        @ad.member = current_member
+        if @ad.save
+            redirect_to site_profile_ads_path, notice: "Announce successfuly created"
+        else
+            render :new
+        end
     end
 
     private
