@@ -1,5 +1,4 @@
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs_rails
 //= require bootbox
 
 /* Sobrescreve a porra toda */

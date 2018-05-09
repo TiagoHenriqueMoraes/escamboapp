@@ -1,3 +1,14 @@
+<%if @ad.errors.any?%>
+    <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <ul>
+        <% @ad.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+        <%end%>
+    </ul>
+    </div>
+<%end%>
+
 <%= form_for([:site, :profile, @ad]) do |f|%>
     <div class="row">
         <div class="form-group col-md-6">
@@ -18,7 +29,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-2">
+            <%= f.label :finish_date%>
+            <%= f.date_field :finish_date, class: "form-control"%>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
             <%= f.label :picture%> <br>
             <% if @ad.picture.present? %>
                 <%= image_tag @ad.picture(:medium), class: "img-thumbnail"%><br>
@@ -29,7 +46,7 @@
     <div class="row">
         <div class="form-group col-md-12">
             <%= f.label :description%>
-            <%= f.text_area :title, class: "form-control", rows: 5%>
+            <%= f.text_area :description, class: "form-control", rows: 5%>
         </div>
     </div>
     <%= submit_tag "Submit", class:"btn btn-primary"%>

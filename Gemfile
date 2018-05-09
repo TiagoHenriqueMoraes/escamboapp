@@ -18,6 +18,7 @@ gem 'money-rails'
 gem 'enum_help'
 gem 'paperclip'
 gem "bootstrap_form", "~> 2.7"
+gem 'jquery-ui-rails'
 
 #gem para template de administração de admin.
 gem 'bootstrap_sb_admin_base_v2'
