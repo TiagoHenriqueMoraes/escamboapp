@@ -1,12 +1,12 @@
 # README
 
-##### LOGIN WITH USERS #####
+##### LOGIN WITH USERS
 
 For admins:
 * username: admin@admin.com
 * passwd: 123456
 
-Used at backoffice.
+Used at `/backoffice`.
 
 For members:
 * username: member@member.com
