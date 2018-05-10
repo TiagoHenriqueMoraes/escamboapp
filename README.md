@@ -1,5 +1,15 @@
 # README
 
+## LOGIN WITH USERS ##
+
+For admins:
+* username: admin@admin.com
+* passwd: 123456
+Used at backoffice.
+
+For members:
+* username: member@member.com
+* passwd: 123456
 
 #### Look at "lib/task" - *utils:setup_dev* can migrate all the stuff to the db.
 

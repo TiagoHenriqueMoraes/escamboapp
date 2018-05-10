@@ -13,13 +13,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= stylesheet_link_tag    'site', media: 'all'%>
-    <%= stylesheet_link_tag    'site/profile', media: 'all' %>
-    
-    <%= javascript_include_tag 'application'%>
-    <%= javascript_include_tag 'site'%>
-    <%= javascript_include_tag 'site/profile'%>
-
-  
+    <%= stylesheet_link_tag    'site/profile', media: 'all' %>  
   </head>
  <body>
     <%= render "layouts/site_shared/navigation"%>
@@ -57,8 +51,14 @@
         <!-- /#page-content-wrapper -->
     </div>
 
-
+    
     <!-- <%= render "layouts/site_shared/footer"%> -->
+    <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag 'site'%>
+    <%= javascript_include_tag 'site/profile'%>
+    <%#= javascript_include_tag 'site/profile/ads'%>
+
+    <%= yield :javascript %>
     <% if notice %>
     <script>
         $.notify("<%= notice %>", "success");
@@ -69,6 +69,8 @@
         $.notify("<%= alert %>", "error");
     </script>
     <%end%>
+
+
   </body>
 </html>
 
