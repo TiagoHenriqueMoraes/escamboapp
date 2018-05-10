@@ -16,8 +16,9 @@ Rails.application.config.assets.precompile += %w(site/profile/ads.js
                                                  site.js
                                                  backoffice.js)
 
-Rails.application.config.assets.precompile += %w(site/profile/ads.js
+Rails.application.config.assets.precompile += %w(site/profile/ads.css
                                                  site/profile.css
+                                                 site_login.css
                                                  site.css
                                                  backoffice.css)
 

@@ -1,26 +1,49 @@
-<h2>Log in</h2>
+<%= content_for :login do%>
+    <%= stylesheet_link_tag    'site_login', media: 'all' %>
+<% end%>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="container">
+  <div class="row">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="main">
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <h3>Please Log In, or <a href="#">Sign Up</a></h3>
+      <div class="login-or">
+        <hr class="hr-or">
+        <span class="span-or">or</span>
+      </div>
+       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {role: "form"}) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class:"form-control", autofocus: true, placeholder: "email@email.com",
+                            autocomplete: "email"%>
+        </div>
+        <div class="form-group">
+        
+          <a class="pull-right" href="#">Forgot password?</a>
+          <%= f.label :password %>
+          <%= f.password_field :password, class:"form-control", placeholder: "Password"%>
+        </div>
+        <div class="checkbox pull-right">
+          <label>
+            <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me%> Remember Me
+            <% end -%>
+          </label>
+        </div>
+
+        <%= f.submit "Submit", class: "btn btn btn-primary"  %>
+      <%end%>
+    
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    
   </div>
-<% end %>
 
-<%= render "members/shared/links" %>
+
+
+<% flash.each do |key, value| %>
+    <script>    
+        $.notify("<%= value %>", "info");
+    </script>
+<% end %>
+</div>
