@@ -5,8 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'notifyjs_rails'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+gem 'rails-assets-bootstrap.growl', source: 'https://rails-assets.org'
+gem 'rails-assets-animate-css', source: 'https://rails-assets.org'
 gem 'sprockets'
 gem 'bundler', '>= 1.8.4'
 gem 'jquery-rails'

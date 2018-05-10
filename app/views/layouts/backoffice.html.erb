@@ -33,16 +33,8 @@
     </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'backoffice', 'data-turbolinks-track': 'reload' %>
-    <% if notice %>
-    <script>
-        $.notify("<%= notice %>", "success");
-    </script>
-    <%end%>
-    <% if alert %>
-    <script>
-        $.notify("<%= alert %>", "error");
-    </script>
-    <%end%>
+    
+    <%= render "layouts/shared/notifications"%>
 </body>
 
 </html>

@@ -59,16 +59,9 @@
     <%#= javascript_include_tag 'site/profile/ads'%>
 
     <%= yield :javascript %>
-    <% if notice %>
-    <script>
-        $.notify("<%= notice %>", "success");
-    </script>
-    <%end%>
-    <% if alert %>
-    <script>
-        $.notify("<%= alert %>", "error");
-    </script>
-    <%end%>
+
+    <%= render "layouts/shared/notifications"%>
+
 
 
   </body>
